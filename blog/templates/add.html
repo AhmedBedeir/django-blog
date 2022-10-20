@@ -1,0 +1,54 @@
+{% extends './layout.html' %}
+{% load crispy_forms_tags %} 
+{% load static %}
+{% block links %}
+  <link rel="stylesheet" href="{% static 'css/add.css' %}">
+{% endblock links %}
+
+{% block title %}
+  Write Blog 
+{% endblock title %} 
+{% block body %}
+
+
+<div class="container form-group add-form">
+  {% if error %}
+  <div class="alert alert-info alert-dismissible fade show" role="alert">
+    <strong>{{error}}</strong> You should check in on some of those fields below(image || category- at most three).
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endif %}
+  <form
+    action=""
+    class="col-sm-10"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    {% csrf_token %} 
+    <div class="title-art">
+      {{ form.title|as_crispy_field }} 
+    </div>
+    <hr>
+    <div class="desc-art">
+      <small style="color: var(--bs-cyan);">Tip: Write Summary about this Article..</small>
+      {{ form.desc|as_crispy_field }}
+    </div>
+    <hr>
+    <div class="image-art">
+      {{ form.artImage|as_crispy_field }}
+    </div>
+    <hr>
+    <div class="content-art">
+      <small style="color: var(--bs-cyan);">Tip: You can write with <a target="_blank" href="https://www.markdownguide.org/basic-syntax">Markdown</a> syntax</small>
+      {{ form.content|as_crispy_field }}
+    </div>
+    <hr>
+    <div class="categorya-art">
+      <small style="color: var(--bs-cyan);">Tip: Choose at most three..</small>
+      {{form.category|as_crispy_field }}
+    </div>
+    <input type="submit" value="{{ mode }}" class="btn btn-info" />
+  </form>
+  
+</div>
+{% endblock body %}

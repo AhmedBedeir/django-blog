@@ -1,0 +1,78 @@
+{% extends './layout.html' %} 
+{% load static %} 
+{% block title %} 
+{{ post.title}} 
+{% endblock title %} 
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/singleArt.css' %}" />
+<link rel="stylesheet" href="{% static 'css/add.css' %}">
+{% endblock links %} 
+{% block body %}
+<div class="container art-info">
+  <div class="art-header">
+    <div class="title">
+      <h1>{{ post.title }}</h1>
+    </div>
+    <div class="desc">
+      {{ post.desc }}
+    </div>
+    <div class="about">
+      <p>Written By: {{ post.owner }}</p>
+      <p style="font-style:italic ;"><i class="fas fa-calendar-alt mr-2"></i>{{ post.created }}</p>
+      <ul class="category">
+        {% for cat in post.category %}
+        <li class="item"><i class="fas fa-tag mr-2"></i>{{cat}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="image">
+      
+      {% if post.artImage %}
+      <img src="{{ post.artImage.url }}" alt="article photo">
+      {% else %}
+      <img src="../../media/images/default.jpg" alt="article photo">
+      {% endif %}
+        
+    </div>
+  </div>
+  <div class="art-info-content">{{content|safe}}</div>
+  <hr>
+</div>
+<div class="comments container">
+  <h1>Comments</h1>
+  {% if user.is_authenticated %}
+    <div class="add-comment">
+      <form action="" class="input-comment">
+        {% csrf_token %}
+        <div class="title-art input-comment2">
+          <input type="text" placeholder="Write a comment.." class="form-control" id = "comment-content" name="comment">
+        </div>
+        <input type="submit" value="Post" class="btn btn-outline-info" id="add-comment" data-comment="{{ post.id }}">
+      </form>
+    </div>
+  {% else %}
+  <div class="alert alert-info" role="alert">
+    <a href="{% url 'login' %}">Login</a> to write a comment..
+  </div>
+  {% endif %}
+  <div class="all-comments">
+    <p style = "margin-top: 5px;">{{ comments.count }} Comment</p>
+    {% for comment in comments %}
+      <div class="one-comment">
+        <div class="header-comment">
+          <h4>@{{ comment.owner }}</h4>
+          <small style="color: var(--bs-cyan);">{{ comment.created }}</small>
+        </div>
+        <div class="content">
+          <p>{{ comment.content }}</p>
+        </div>
+      </div>
+    {% empty%}
+    <div id="no-comment">
+      <h3> No comments right now... </h3>
+    </div>
+    {% endfor %}
+      
+  </div>
+</div>
+{% endblock body %}

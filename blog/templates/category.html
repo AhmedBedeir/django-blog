@@ -1,0 +1,99 @@
+{% extends './layout.html' %}
+{% load static %}
+
+
+{% block title %}
+  {{ title }}
+{% endblock title %}
+  
+
+{% block links %}
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock links %}
+  
+
+{% block body %}
+<div class="header">
+  <h1>All Articles in {{title}}🤩</h1>
+  <hr>
+</div>
+<div class="container blog-content">
+  {% for post in targetArticle %}
+  <article class="postcard dark blue" data-card="{{post.id}}">
+    <a class="postcard__img_link" href="{% url 'blog:singleArt' post.id %}">
+      
+      {% if post.artImage %} 
+        <img
+          class="postcard__img"
+          src="{{ post.artImage.url }}"
+          alt="Image Title"
+        />
+      {% else %}
+        <img
+        class="postcard__img"
+        src="../../media/images/default.jpg"
+        alt="Image Title"
+        />
+      {% endif %}
+        
+    </a>
+    <div class="postcard__text">
+      <h1 class="postcard__title blue"><a href="{% url 'blog:singleArt' post.id %}">{{ post.title }}</a></h1>
+      <div class="postcard__subtitle small">
+          <i class="fas fa-calendar-alt mr-2"></i>{{ post.created }}
+      </div>
+      <div class="postcard__bar"></div>
+      <div class="postcard__preview-txt">
+        {{ post.desc }}
+      </div>
+      <ul class="postcard__tagbox">
+        
+        {% for cat in post.category %}
+        <li class="tag__item"><i class="fas fa-tag mr-2"></i>{{cat}}</li>
+        {% endfor %}
+        <li class="tag__item"><i class="fas fa-clock mr-2"></i>5 mins.</li>
+        {% if user.is_authenticated %}
+          {% if user in post.bookmarks.all %}
+          <li class="tag__item play blue save saved" id="{{ post.pk}}">
+            <i class="fa-regular fa-bookmark"></i><span class="save-txt">Saved</span>
+          </li>
+          {% else %}  
+          <li class="tag__item play save blue pointed" id="{{post.id}}"data-bs-toggle="tooltip" data-bs-title="Default tooltip">
+            <i class="fa-regular fa-bookmark"></i><span class="save-txt">Save</span>
+          </li>
+          {% endif %}
+          {% if user != post.owner %}
+            {% if user in post.upvote.all %}
+              <li class="tag__item play blue vote voted" data-vote="{{ post.id }}">
+                <i class="fa-solid fa-angle-up"></i><span class="vote-num">{{ post.upvote.count }}</span>
+              </li>
+            {% else %}
+              <li class="tag__item play blue vote" data-vote="{{ post.id }}">
+                <i class="fa-solid fa-angle-up"></i><span class="vote-num">{{ post.upvote.count }}</span>
+              </li>
+            {% endif %}
+          {% endif %}
+          
+          {% if user == post.owner %}
+          <li class="tag__item play blue delete pointed" data-delete="{{post.id}}">
+            <i class="fa-regular fa-trash-can"></i>
+          </li>
+          <a href="{% url 'blog:update' post.id %}">
+            <li class="tag__item play blue pointed" data-update="{{post.id}}">
+              <i class="fa-regular fa-pen-to-square"></i> Update
+            </li>
+          </a>
+          {% endif %}
+            
+        {% endif %}
+      </ul>
+    </div>
+  </article>
+  {% empty %}
+  <div class="alert alert-info" role="alert">
+    <strong>There are no Aritcles on this category.</strong>
+  </div>
+  {% endfor %}
+</div>
+{% endblock body %}
+  

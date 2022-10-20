@@ -1,0 +1,65 @@
+{% extends './layout.html' %} 
+{% load static %} 
+{% block title %} 
+Categories 
+{%endblock title %} 
+
+{% block links %}
+<link rel="stylesheet" href="{% static 'css/category.css' %}" />
+{% endblock links %} 
+
+
+
+{% block body %}
+<div class="header">
+  <h1>Categories😎</h1>
+  <hr>
+</div>
+<div class="categorys">
+  <a href="{% url 'blog:category' 'javascript' %}"
+    ><div class="profile-card-2">
+      <img
+        src="../../media/images/javascript.jpg"
+        class="img img-responsive"
+      />
+      <div class="profile-name">JavaScript</div>
+    </div></a
+  >
+  <a href="{% url 'blog:category' 'python' %}"
+    ><div class="profile-card-2">
+      <img
+        src="../../media/images/python.jpg"
+        class="img img-responsive"
+      />
+      <div class="profile-name">Python</div>
+    </div></a
+  >
+  <a href="{% url 'blog:category' 'react' %}"
+    ><div class="profile-card-2">
+      <img
+        src="../../media/images/react.jpg"
+        class="img img-responsive"
+      />
+      <div class="profile-name">React</div>
+    </div></a
+  >
+  <a href="{% url 'blog:category' 'web develpment' %}"
+    ><div class="profile-card-2">
+      <img
+        src="../../media/images/web.jpg"
+        class="img img-responsive"
+      />
+      <div class="profile-name">Web Devolpment</div>
+    </div></a
+  >
+  <a href="{% url 'blog:category' 'other' %}"
+    ><div class="profile-card-2">
+      <img
+        src="../../media/images/other.jpg"
+        class="img img-responsive"
+      />
+      <div class="profile-name">Other..</div>
+    </div></a
+  >
+</div>
+{% endblock body %}

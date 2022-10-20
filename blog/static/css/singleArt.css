@@ -1,0 +1,82 @@
+.art-info {
+  margin: 50px auto;
+  color: var(--bs-white);
+  font-family: monospace;
+}
+.art-info .art-header img {
+  width: 70%;
+  border-radius: 15px;
+}
+.art-header {
+  text-align: center;
+}
+.art-header .title h1{
+  max-width: 100%;
+  width: 100%;
+  font-size: 60px;
+}
+.art-header ul {
+  list-style: none;
+  padding: 0;
+}
+.art-header li {
+  display: inline-block;
+  background: rgba(83, 83, 83, 0.4);
+  border-radius: 3px;
+  padding: 2.5px 10px;
+  margin: 0 5px 5px 0;
+  cursor: default;
+  user-select: none;
+  transition: background-color 0.3s;
+}
+.art-info-content{
+  width: 70%;
+  margin: 50px auto;
+}
+.art-header .about {
+  margin-top: 20px;
+}
+
+
+.comments {
+  color: var(--bs-white) !important;
+  margin-bottom: 30px;
+}
+.comments .header-comment {
+  text-align: start !important;
+}
+.comments .header-comment h4{
+  margin: 0;
+}
+.one-comment {
+  margin-top: 15px;
+}
+.input-comment {
+  display: flex;
+  flex-wrap: wrap;
+}
+.input-comment .btn {
+  margin-left: 20px;
+}
+.one-comment p {
+  padding: 5px 0 0 15px;
+  margin-left: 20px;
+}
+
+@media (max-width: 950px) {
+  .art-info .art-header img{
+    width: 100%;
+  }
+  .art-info-content{
+    width: 100%;
+  }
+  .art-header .title h1{
+    font-size: 45px;
+  }
+  .input-comment {
+    display: block;
+  }
+  .input-comment .btn {
+    margin: 15px 0;
+  }
+}

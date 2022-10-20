@@ -1,0 +1,179 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
+      integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="{% static 'css/layout.css' %}" />
+    <script
+      src="https://kit.fontawesome.com/4e362c2153.js"
+      crossorigin="anonymous"
+    ></script>
+    {% block links %} {% endblock links %}
+
+    <title>{% block title %} Blog {% endblock title %}</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="padding: 15px">
+      <div class="container-fluid">
+        <a
+          class="navbar-brand"
+          href="{% url 'blog:index' %}"
+          style="color: var(--bs-cyan)"
+          >BEDEIR</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto ulNav">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="{% url 'blog:index' %}"
+                ><i class="fa-solid fa-house"></i>My Feed</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'blog:categories' %}"
+                ><i class="fa-solid fa-layer-group"></i>Categories</a
+              >
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="{% url 'blog:add' %}"
+                ><i class="fa-regular fa-pen-to-square"></i>Add Article</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="{% url 'blog:bookmarks' %}"
+                ><i class="fa-solid fa-book-bookmark"></i>Bookmarks</a
+              >
+            </li>
+            <li class="nav-item dropdown active">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="fa-regular fa-circle-user"></i> {{user}}
+              </a>
+              <ul class="dropdown-menu">
+                <!-- <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li> -->
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'logout' %}"
+                    ><i class="fa-solid fa-arrow-right-from-bracket"></i
+                    >Logout</a
+                  >
+                </li>
+              </ul>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'accounts:register' %}"
+                >Register</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'login' %}">Login</a>
+            </li>
+            {% endif %}
+          </ul>
+          <form class="d-flex" role="search" method="get" action="{% url 'blog:index' %}">
+            <input
+              class="form-control me-2 input-search"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              name="q"
+            />
+            <button class="btn btn-outline-info search" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <div class="blog-content1">{% block body %} {% endblock body %}</div>
+    <div class="footer">
+      <footer
+        class="text-center text-lg-start text-white"
+        style="background-color: #1c2331"
+      >
+        <section class="footer-social">
+          <a href="mailto:bederahmed0@gmail.com">
+            <i class="fa-regular fa-envelope"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/ahmed-bedeir-45b0171bb/">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/AhmedBedeir">
+            <i class="fab fa-github"></i>
+          </a>
+        </section>
+        <!-- Copyright -->
+        <div
+          class="text-center p-3"
+          style="background-color: rgba(0, 0, 0, 0.2)"
+        >
+          © <span class="thisYear"></span>
+          <a
+            class=""
+            target="_blank"
+            href="https://www.linkedin.com/in/ahmed-bedeir-45b0171bb/"
+            >Bedeir.</a
+          >
+          All Rights Reserved.
+        </div>
+        <!-- Copyright -->
+      </footer>
+      <!-- Footer -->
+    </div>
+    <!-- End of .container -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+      const date = new Date();
+      const year = document.querySelector('.thisYear');
+      year.innerHTML = date.getFullYear();
+    </script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  </body>
+</html>

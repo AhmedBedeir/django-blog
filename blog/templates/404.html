@@ -1,0 +1,21 @@
+{% extends './layout.html' %}
+{% load static %}
+
+{% block title %}
+  404 Not found
+{% endblock title %}
+  
+
+{% block links %}
+  <link rel="stylesheet" href="{% static 'css/404.css' %}">
+{% endblock links %}
+  
+{% block body %}
+<div id="main">
+  <div class="fof">
+        <h1>Error 404</h1>
+        <p>This Page Is Not Here..</p>
+  </div>
+</div>
+{% endblock body %}
+  
