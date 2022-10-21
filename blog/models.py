@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from multiselectfield import MultiSelectField
+from datetime import datetime    
+from django.utils.timezone import now
 # Create your models here.
 
 class Article(models.Model):
@@ -17,7 +19,7 @@ class Article(models.Model):
   artImage = models.ImageField(upload_to = 'art_photos', default = './images/default.jpg', null = True, blank = True)
   content = models.TextField()
   category = MultiSelectField(choices=categoryList,  max_choices=3)
-  created = models.DateTimeField(auto_now_add=True) 
+  created = models.DateTimeField(default=now, editable=False) 
   bookmarks = models.ManyToManyField(User, related_name='bookmarks')
   upvote = models.ManyToManyField(User, related_name='up')
   downvote = models.ManyToManyField(User, related_name='down')
@@ -30,7 +32,7 @@ class Article(models.Model):
 class Comment(models.Model):
   owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='owner')
   article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name = 'article')
-  created = models.DateTimeField(auto_now_add=True)
+  created = models.DateTimeField(default=now, editable=False)
   content = models.TextField(max_length = 200)
   class Meta:
     ordering = ['-created']

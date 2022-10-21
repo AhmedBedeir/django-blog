@@ -6,7 +6,21 @@ const deleteBtns = document.querySelectorAll('.delete');
 const commentBtn = document.getElementById('add-comment');
 const noComment = document.getElementById('no-comment');
 const comments = document.querySelector('.all-comments');
-
+const commentCounts = document.getElementById('comment-count');
+let current = new Date();
+let cDate =
+  current.getFullYear() +
+  '-' +
+  (current.getMonth() + 1) +
+  '-' +
+  current.getDate();
+let cTime =
+  current.getHours() + ':' + current.getMinutes() + ':' + current.getSeconds();
+// let dateTime1 = cDate + ' ' + cTime;
+var dateTime = current.toLocaleString([], {
+  hour: '2-digit',
+  minute: '2-digit'
+});
 // to save Article
 saveBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
@@ -106,7 +120,7 @@ commentBtn.addEventListener('click', (e) => {
     noComment.remove();
   }
   if (commentContent.value !== '') {
-    console.log(commentBtn.dataset.comment)
+    console.log(commentBtn.dataset.comment);
     fetch(`comment/${commentBtn.dataset.comment}`, {
       method: 'post',
       body: JSON.stringify({
@@ -115,7 +129,12 @@ commentBtn.addEventListener('click', (e) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        const prettyData = data;
+        comments.innerHTML =
+          createComment(prettyData.content, dateTime, prettyData.owner) +
+          comments.innerHTML;
+        console.log(prettyData);
+        commentCounts.innerHTML = prettyData.numbComments;
       })
       .catch((e) => {
         console.log(e);
@@ -129,7 +148,7 @@ function createComment(content, created, owner) {
   <div class="one-comment">
         <div class="header-comment">
           <h4>@${owner}</h4>
-          <small style="color: var(--bs-cyan);">${created}</small>
+          <small style="color: var(--bs-cyan);">${cDate}, ${created}</small>
         </div>
         <div class="content">
           <p>${content}</p>

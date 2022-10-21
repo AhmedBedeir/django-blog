@@ -45,7 +45,7 @@
       <form action="" class="input-comment">
         {% csrf_token %}
         <div class="title-art input-comment2">
-          <input type="text" placeholder="Write a comment.." class="form-control" id = "comment-content" name="comment">
+          <input type="text" placeholder="Write a comment.." class="form-control" id = "comment-content" required name="comment">
         </div>
         <input type="submit" value="Post" class="btn btn-outline-info" id="add-comment" data-comment="{{ post.id }}">
       </form>
@@ -55,8 +55,8 @@
     <a href="{% url 'login' %}">Login</a> to write a comment..
   </div>
   {% endif %}
+  <p style = "margin-top: 5px;"><span id="comment-count">{{ comments.count }}</span> Comment</p>
   <div class="all-comments">
-    <p style = "margin-top: 5px;">{{ comments.count }} Comment</p>
     {% for comment in comments %}
       <div class="one-comment">
         <div class="header-comment">

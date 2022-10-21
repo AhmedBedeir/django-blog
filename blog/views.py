@@ -1,4 +1,6 @@
 import json
+import datetime
+import time
 from webbrowser import get
 from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
@@ -154,15 +156,17 @@ def update(request, id):
 def addComment(request, id):
   if request.user.is_authenticated:
     if request.method == "POST":
-      targetArticl = Article.objects.get(pk = id)
+      targetArticle = Article.objects.get(pk = id)
       data = json.loads(request.body)
       content = data.get('comment')
-      newComment = Comment(owner = request.user, article = targetArticl, content = content)
+      if content == '':
+        return HttpResponseRedirect(reverse('blog:singleArt', kwargs={'id':id}))
+      newComment = Comment(owner = request.user, article = targetArticle, content = content)
       newComment.save()
-      print("IN POST")
       return JsonResponse({
         'content': newComment.content, 
         'owner': request.user.username, 
         'created': newComment.created, 
-        'numbComments': Comment.objects.filter(article = targetArticl).count()
+        'numbComments': Comment.objects.filter(article = targetArticle).count()
         })
+  return HttpResponseRedirect(reverse('blog:singleArt', kwargs={'id':id}))
