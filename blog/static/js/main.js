@@ -19,7 +19,7 @@ let cTime =
 // let dateTime1 = cDate + ' ' + cTime;
 var dateTime = current.toLocaleString([], {
   hour: '2-digit',
-  minute: '2-digit'
+  minute: '2-digit',
 });
 // to save Article
 saveBtns.forEach((btn) => {
@@ -120,7 +120,6 @@ commentBtn.addEventListener('click', (e) => {
     noComment.remove();
   }
   if (commentContent.value !== '') {
-    console.log(commentBtn.dataset.comment);
     fetch(`comment/${commentBtn.dataset.comment}`, {
       method: 'post',
       body: JSON.stringify({
@@ -133,8 +132,8 @@ commentBtn.addEventListener('click', (e) => {
         comments.innerHTML =
           createComment(prettyData.content, dateTime, prettyData.owner) +
           comments.innerHTML;
-        console.log(prettyData);
         commentCounts.innerHTML = prettyData.numbComments;
+        showMessage('Comment Added Successfully');
       })
       .catch((e) => {
         console.log(e);
@@ -155,4 +154,14 @@ function createComment(content, created, owner) {
         </div>
       </div>
   `;
+}
+
+// for message
+function showMessage(message) {
+  const x = document.getElementById('snackbar');
+  x.className = 'show';
+  x.innerHTML = message;
+  setTimeout(function () {
+    x.className = x.className.replace('show', '');
+  }, 3000);
 }

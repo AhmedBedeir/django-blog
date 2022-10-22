@@ -126,7 +126,11 @@
         </div>
       </div>
     </nav>
-    <div class="blog-content1">{% block body %} {% endblock body %}</div>
+    <div class="blog-content1">
+      {% block body %} 
+      {% endblock body %}
+      <div id="snackbar"></div>
+    </div>
     <div class="footer">
       <footer
         class="text-center text-lg-start text-white"
