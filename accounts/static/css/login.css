@@ -22,9 +22,12 @@ body {
 @media (max-width: 980px) {
   .box-form {
     flex-flow: wrap;
-    text-align: center;
     align-content: center;
     align-items: center;
+    width: 90%;
+  }
+  .box-form .left{
+    text-align: center;
   }
 }
 .box-form div {
@@ -36,6 +39,7 @@ body {
   background-repeat: no-repeat;
   background-image: url('../images/muha-ajjan-sL2BRR1cuvM-unsplash.jpg');
   overflow: hidden;
+  width: 100%;
 }
 .box-form .left .overlay {
   padding: 30px;
