@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href=""><img src="./blog/static/semicolon.png" alt="Semicolon" width="200"></a>
+  <a href="#"><img src="./blog/static/semicolon.png" alt="Semicolon" width="200"></a>
   <br>
   Semicolon;
   <br>
