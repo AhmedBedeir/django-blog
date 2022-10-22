@@ -51,7 +51,7 @@
         {% for cat in post.category %}
         <li class="tag__item"><i class="fas fa-tag mr-2"></i>{{cat}}</li>
         {% endfor %}
-        <li class="tag__item"><i class="fas fa-clock mr-2"></i>5 mins.</li>
+        <!-- <li class="tag__item"><i class="fas fa-clock mr-2"></i>5 mins.</li> -->
         {% if user.is_authenticated %}
           {% if user in post.bookmarks.all %}
           <li class="tag__item play blue save saved" id="{{ post.pk}}">
@@ -72,6 +72,10 @@
                 <i class="fa-solid fa-angle-up"></i><span class="vote-num">{{ post.upvote.count }}</span>
               </li>
             {% endif %}
+          {% else %}
+            <li class="tag__item play blue">
+              <span>{{ post.upvote.count }} vote</span>
+            </li>
           {% endif %}
           
           {% if user == post.owner %}

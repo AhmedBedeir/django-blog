@@ -25,7 +25,6 @@ var dateTime = current.toLocaleString([], {
 saveBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
     const url = `save/${btn.id}`;
-    console.log(url);
     fetch(url, {
       method: 'post',
     })
@@ -34,9 +33,11 @@ saveBtns.forEach((btn) => {
         if (data.message === 'removed') {
           btn.classList.remove('saved');
           btn.querySelector('.save-txt').innerHTML = 'Save';
+          showMessage('Article Removed from Bookmarks');
         } else {
           btn.classList.add('saved');
           btn.querySelector('.save-txt').innerHTML = 'Saved';
+          showMessage('Article saved in Bookmarks');
         }
       })
       .catch((e) => {
