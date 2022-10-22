@@ -25,6 +25,7 @@
     {% block links %} {% endblock links %}
 
     <title>{% block title %} Blog {% endblock title %}</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'semicolon.png' %}"/>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark" style="padding: 15px">
@@ -32,8 +33,8 @@
         <a
           class="navbar-brand"
           href="{% url 'blog:index' %}"
-          style="color: var(--bs-cyan)"
-          >BEDEIR</a
+          style="color: var(--bs-cyan); font-family: monospace; font-size:28px;"
+          >Semicolon;</a
         >
         <button
           class="navbar-toggler"
