@@ -2,7 +2,7 @@
   <br>
   <a href="#"><img src="./blog/static/semicolon.png" alt="Semicolon" width="200"></a>
   <br>
-  Semicolon;
+  Semicolon
   <br>
 </h1>
 <h4 align="center">Full-Featured blog built-in by Django and Bootstrap.</h4>
@@ -14,8 +14,8 @@
   <a href="https://djangoproject.com/">
     <img src="https://img.shields.io/badge/django-4.0-success.svg" alt="django">
   </a>
-  <a href="https://choosealicense.com/licenses/mit/">
-    <img src="https://img.shields.io/apm/l/vim-mode.svg" alt="license">
+  <a href="https://choosealicense.com/licenses/gpl-3.0/">
+    <img src="https://img.shields.io/badge/license-GPL--3.0-green" alt="license">
   </a>
 </p>
 <p align="center">
