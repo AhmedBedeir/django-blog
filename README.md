@@ -43,3 +43,19 @@ This is a project which was developed for the CS50 web course final project. The
   - (TODO) modify user profile.
 - blog:
   - this app responsible for creating the articles and handling CRUD operations on them.
+
+<a name = "key-features"></a>
+
+## Key Features
+- User Registration.
+- User Login & Logout.
+- Create, Read, Update & Delete Articles.
+- Create an article with Markdown syntax.
+- Comments
+- Search
+- Customized admin panel
+- Categories
+- Bookmarks
+- Vote system
+
+
