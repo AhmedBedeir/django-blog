@@ -1,9 +1,8 @@
-<h1 align="center">
+<div align="center">
   <br>
   <a href="#"><img src="./blog/static/semicolon.png" alt="Semicolon" width="200"></a>
-  <br>
-  Semicolon
-</h1>
+  <h1>Semicolon</h1>
+</div>
 
 <h4 align="center">Full-Featured blog built-in by Django and Bootstrap.</h4>
 
