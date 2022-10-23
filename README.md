@@ -1,5 +1,4 @@
 <div align="center">
-  <br>
   <a href="#"><img src="./blog/static/semicolon.png" alt="Semicolon" width="200"></a>
   <h1>Semicolon</h1>
 </div>
@@ -25,7 +24,6 @@
   <a href="#todo">TODO</a> •
   <a href="#author">Author</a> 
 </p>
-<hr>
 
 <!-- ![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif) -->
 
