@@ -19,12 +19,29 @@
   </a>
 </p>
 <p align="center">
+  <a href="#overview">Overview</a> •
+  <a href="#describe">Describe folders</a> •
   <a href="#key-features">Key Features</a> •
   <a href="#how-to-use">How To Use</a> •
-  <a href="#download">Download</a> •
-  <a href="#credits">Contributors</a> •
-  <a href="#related">TODO</a> •
-  <a href="#license">Author</a>
+  <a href="#todo">TODO</a> •
+  <a href="#author">Author</a> 
 </p>
 
 <!-- ![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif) -->
+
+<a name = "overview"></a>
+
+## Overview
+
+This is a project which was developed for the CS50 web course final project. The application contained within is a CMS-style blog site where developers can publish their blog posts and comment on other developers' posts in addition to other options.
+
+<a name = "describe"></a>
+
+## What’s contained in each folder
+
+- accounts:
+  - this app is manage users' accounts (login - logout - register - etc.)
+  - [Django authentication system](https://docs.djangoproject.com/en/4.1/topics/auth/default/) was used to implement it.
+  - (TODO) modify user profile.
+- blog:
+  - this app responsible for creating the articles and handling CRUD operations on them.
