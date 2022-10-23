@@ -3,7 +3,7 @@
   <a href="#"><img src="./blog/static/semicolon.png" alt="Semicolon" width="200"></a>
   <br>
   Semicolon
-  <br>
+
 </h1>
 <h4 align="center">Full-Featured blog built-in by Django and Bootstrap.</h4>
 
@@ -26,6 +26,7 @@
   <a href="#todo">TODO</a> •
   <a href="#author">Author</a> 
 </p>
+<br>
 
 <!-- ![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif) -->
 
