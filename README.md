@@ -25,7 +25,7 @@
   <a href="#author">Author</a> 
 </p>
 
-<!-- ![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif) -->
+<!-- ![screenshot]() -->
 
 <a name = "overview"></a>
 
@@ -47,10 +47,11 @@ This is a project which was developed for the CS50 web course final project. The
 <a name = "key-features"></a>
 
 ## Key Features
+
 - User Registration.
 - User Login & Logout.
 - Create, Read, Update & Delete Articles.
-- Create an article with Markdown syntax.
+- Save an article with Markdown preview.
 - Comments
 - Search
 - Customized admin panel
@@ -58,4 +59,46 @@ This is a project which was developed for the CS50 web course final project. The
 - Bookmarks
 - Vote system
 
+<a name = "how-to-use"></a>
 
+## How to use
+
+- Create Virtual Environment
+
+  ```
+  $ pip install virtualenv
+  $ virtualenv environment_name
+  ```
+
+  On Windows, run:
+
+  ```
+  $ environment_name\Scripts\activate.bat
+  ```
+
+  On Unix or MacOS, run:
+
+  ```
+  $ source environment_name\Scripts\activate
+  ```
+
+- clone this repository
+  ```
+  $ git clone https://github.com/AhmedBedeir/django-blog.git
+  $ cd django-blog
+  ```
+- install dependencies
+  ```
+  $ pip install -r requirements.txt
+  ```
+- finally, You can run the project 🎉
+  ```
+  $ python manage.py runserver 
+  ```
+  Open http://localhost:8000 to view it in the browser. 
+
+<a name = "todo"></a>
+
+<!-- ## TODO (Future Implementations)
+
+- -->
