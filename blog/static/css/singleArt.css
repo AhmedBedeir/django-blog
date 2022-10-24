@@ -80,3 +80,7 @@
     margin: 15px 0;
   }
 }
+.art-info-content img{
+  width: 80%;
+  margin: 5px auto;
+}
