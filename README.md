@@ -1,4 +1,5 @@
 <div align="center">
+  <br>
   <a href="#"><img src="./blog/static/semicolon.png" alt="Semicolon" width="200"></a>
   <h1>Semicolon</h1>
 </div>
@@ -18,9 +19,10 @@
 </p>
 <p align="center">
   <a href="#overview">Overview</a> •
-  <a href="#describe">Describe folders</a> •
+  <a href="#describe">Folders</a> •
   <a href="#key-features">Key Features</a> •
   <a href="#how-to-use">How To Use</a> •
+  <a href="#views">Urls & Views</a> •
   <a href="#todo">TODO</a> •
   <a href="#author">Author</a> 
 </p>
@@ -97,6 +99,67 @@ This is a project which was developed for the CS50 web course final project. The
   ```
   Open http://localhost:8000 to view it in the browser.
 
+<a name = "views"></a>
+
+# Urls and Views
+
+- #### `/` (All articles)
+
+  - view : `blog/views.py#index`
+  - template : `blog/templates/index.html`
+
+  - <details>
+
+    - every article card show :
+      - title.
+      - when created.
+      - description.
+      - tags.
+      - saved or unsaved button.
+      - vote button.
+      - if the user owner this article:
+        - number of votes show not vote button.
+        - can delete and update.
+
+    </details>
+
+- #### `/add`
+
+  _login required_
+
+  - view : `blog/views.py#add`
+  - template : `blog/templates/add.html`
+
+  - <details>
+
+    - user can write article according to the condition
+
+    </details>
+
+- #### `/articles/<str:id>` (Article view)
+
+  - view : `blog/views.py#singleArt`
+  - template : `blog/templates/singleArt.html`
+
+  - <details>
+
+    - Show all details about this article.
+    - user can add comment in this page.
+
+    </details>
+
+- #### `/categories`
+
+  - view : `blog/views.py#categories`
+  - template : `blog/templates/categories.html`
+
+  - <details>
+
+    - Show all categories.
+    - and each category has some articles belong it.
+
+    </details>
+
 <a name = "todo"></a>
 
 # TODO (Future Implementations)
@@ -105,4 +168,5 @@ This is a project which was developed for the CS50 web course final project. The
 - Follow and Unfollow system.
 - Enhance article view
 - Forget password
+- paginator
 - ...
