@@ -29,13 +29,13 @@
 
 <a name = "overview"></a>
 
-## Overview
+# Overview
 
-This is a project which was developed for the CS50 web course final project. The application contained within is a CMS-style blog site where developers can publish their blog posts and comment on other developers' posts in addition to other options.
+This is a project which was developed for the CS50 web course final project. The application contained within is a CMS-style blog site where developers can publish their blog articles and comment on other developers' articles in addition to other options.
 
 <a name = "describe"></a>
 
-## What’s contained in each folder
+# What’s contained in each folder
 
 - accounts:
   - this app is manage users' accounts (login - logout - register - etc.)
@@ -46,14 +46,14 @@ This is a project which was developed for the CS50 web course final project. The
 
 <a name = "key-features"></a>
 
-## Key Features
+# Key Features
 
 - User Registration.
 - User Login & Logout.
 - Create, Read, Update & Delete Articles.
 - Save an article with Markdown preview.
 - Comments
-- Search
+- Search for articles on any pages
 - Customized admin panel
 - Categories
 - Bookmarks
@@ -61,7 +61,7 @@ This is a project which was developed for the CS50 web course final project. The
 
 <a name = "how-to-use"></a>
 
-## How to use
+# How to use
 
 - Create Virtual Environment
 
@@ -93,12 +93,16 @@ This is a project which was developed for the CS50 web course final project. The
   ```
 - finally, You can run the project 🎉
   ```
-  $ python manage.py runserver 
+  $ python manage.py runserver
   ```
-  Open http://localhost:8000 to view it in the browser. 
+  Open http://localhost:8000 to view it in the browser.
 
 <a name = "todo"></a>
 
-<!-- ## TODO (Future Implementations)
+# TODO (Future Implementations)
 
-- -->
+- User profile (update information)
+- Follow and Unfollow system.
+- Enhance article view
+- Forget password
+- ...
