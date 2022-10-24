@@ -122,7 +122,7 @@ This is a project which was developed for the CS50 web course final project. The
       - if the user owner this article:
         - number of votes show not vote button.
         - can delete and update.
-      - ![all](screenshots/all_AdobeExpress.gif)
+    - ![all](screenshots/all_AdobeExpress.gif)
 
     </details>
 
