@@ -35,6 +35,8 @@
 
 This is a project which was developed for the CS50 web course final project. The application contained within is a CMS-style blog site where developers can publish their blog articles and comment on other developers' articles in addition to other options.
 
+Here is the [demo](https://www.youtube.com/watch?v=8sMxsItJub0).
+
 <a name = "describe"></a>
 
 # What’s contained in each folder
@@ -204,10 +206,12 @@ This is a project which was developed for the CS50 web course final project. The
 - [ ] Forget password.
 - [ ] paginator.
 - [ ] ...
-> Please star the repo and feel free to make pull requests ⭐🙌.
+  > Please star the repo and feel free to make pull requests ⭐🙌.
 
 <a name = "author"></a>
 
 # Author
+
 [Bedeir](https://www.linkedin.com/in/ahmed-bedeir-45b0171bb/)
-> If you have any feedback, feel free to message me. 
+
+> If you have any feedback, feel free to message me.
