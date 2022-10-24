@@ -21,7 +21,7 @@
   <a href="#overview">Overview</a> •
   <a href="#describe">Folders</a> •
   <a href="#key-features">Key Features</a> •
-  <a href="#how-to-use">How To Use</a> •
+  <a href="#how-to-use">Run Locally</a> •
   <a href="#views">Urls & Views</a> •
   <a href="#todo">TODO</a> •
   <a href="#author">Author</a> 
@@ -63,7 +63,7 @@ This is a project which was developed for the CS50 web course final project. The
 
 <a name = "how-to-use"></a>
 
-# How to use
+# Run Locally
 
 - Create Virtual Environment
 
