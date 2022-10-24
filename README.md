@@ -197,11 +197,17 @@ This is a project which was developed for the CS50 web course final project. The
 
 # TODO (Future Implementations)
 
-- Toggle between dark and light mode.
-- User profile (update information).
-- Follow and Unfollow system.
-- Enhance article view.
-- Forget password.
-- paginator.
-- ...
+- [ ] Toggle between dark and light mode.
+- [ ] User profile (update information).
+- [ ] Follow and Unfollow system.
+- [ ] Enhance article view.
+- [ ] Forget password.
+- [ ] paginator.
+- [ ] ...
 > Please star the repo and feel free to make pull requests ⭐🙌.
+
+<a name = "author"></a>
+
+# Author
+[Bedeir](https://www.linkedin.com/in/ahmed-bedeir-45b0171bb/)
+> If you have any feedback, feel free to message me. 
