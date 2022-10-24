@@ -103,6 +103,8 @@ This is a project which was developed for the CS50 web course final project. The
 
 # Urls and Views
 
+**some base URL**
+
 - #### `/` (All articles)
 
   - view : `blog/views.py#index`
@@ -120,6 +122,7 @@ This is a project which was developed for the CS50 web course final project. The
       - if the user owner this article:
         - number of votes show not vote button.
         - can delete and update.
+      - ![all](screenshots/all_AdobeExpress.gif)
 
     </details>
 
@@ -133,7 +136,7 @@ This is a project which was developed for the CS50 web course final project. The
   - <details>
 
     - user can write article according to the condition
-
+    - ![add](screenshots/add.gif)
     </details>
 
 - #### `/articles/<str:id>` (Article view)
@@ -145,7 +148,7 @@ This is a project which was developed for the CS50 web course final project. The
 
     - Show all details about this article.
     - user can add comment in this page.
-
+    - ![view](screenshots/articleview.gif)
     </details>
 
 - #### `/categories`
@@ -156,7 +159,37 @@ This is a project which was developed for the CS50 web course final project. The
   - <details>
 
     - Show all categories.
-    - and each category has some articles belong it.
+    - each category has some articles belong it.
+    - ![categories](screenshots/category.gif)
+
+    </details>
+
+- #### `/update/<str:id>`
+
+  _login required_
+  _owner required_
+
+  - view : `blog/views.py#update`
+  - template : `blog/templates/add.html`
+
+  - <details>
+
+    - Depending on the request user can add a new article or update an existing article
+    - ![update](screenshots/update.gif)
+
+    </details>
+
+- #### `/accounts`
+
+  - `/login`
+    - login page
+  - `/logout`
+    - logout page
+  - `/register`
+    - sign up page
+  - <details>
+
+    ![accounts](screenshots/accounts.gif)
 
     </details>
 
