@@ -34,6 +34,7 @@
 # Overview
 
 This is a project which was developed for the CS50 web course final project. The application contained within is a CMS-style blog site where developers can publish their blog articles and comment on other developers' articles in addition to other options.
+[![DEMO](./screenshots//accounts.gif)](https://www.youtube.com/watch?v=8sMxsItJub0)
 
 Here is the [demo](https://www.youtube.com/watch?v=8sMxsItJub0).
 
