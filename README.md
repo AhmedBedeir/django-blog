@@ -35,16 +35,11 @@
 
 This is a project which was developed for the CS50 web course final project. The application contained within is a CMS-style blog site where developers can publish their blog articles and comment on other developers' articles in addition to other options.
 
+Here is the [Demo](https://www.youtube.com/watch?v=8sMxsItJub0) 🙌.
 
-Here is the Demo 👇
-
-
-
-https://github.com/AhmedBedeir/django-blog/assets/66643588/0b8bd12b-0da4-4bbc-b8c4-5d322f5d04d9
+![login](./screenshots/login.JPG)
 
 
-
-<!-- Here is the [demo](https://www.youtube.com/watch?v=8sMxsItJub0). -->
 
 <a name = "describe"></a>
 
